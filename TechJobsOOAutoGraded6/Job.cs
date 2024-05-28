@@ -47,23 +47,23 @@ namespace TechJobsOOAutoGraded6
         //Until you create this method, you will not be able to print a job to the console.
         public override string ToString()
         {
-            string idString = string.IsNullOrEmpty(Id.ToString()) ? "Data not available" : Id.ToString();
-            string nameString = string.IsNullOrEmpty(Name) ? "Data not available" : Name;
-            string employerString = string.IsNullOrEmpty(EmployerName.ToString()) ? "Data not available" : EmployerName.ToString();
-            string locationString = string.IsNullOrEmpty(EmployerLocation.ToString()) ? "Data not available" : EmployerLocation.ToString();
-            string jobTypeString = string.IsNullOrEmpty(JobType.ToString()) ? "Data not available" : JobType.ToString();
-            string coreCompetencyString = string.IsNullOrEmpty(JobCoreCompetency.ToString()) ? "Data not available" : JobCoreCompetency.ToString();
+            string idTernary = string.IsNullOrEmpty(Id.ToString()) ? "Data not available" : Id.ToString();
+            string nameTernary = string.IsNullOrEmpty(Name) ? "Data not available" : Name;
+            string employerTernary = string.IsNullOrEmpty(EmployerName.ToString()) ? "Data not available" : EmployerName.ToString();
+            string locationTernary = string.IsNullOrEmpty(EmployerLocation.ToString()) ? "Data not available" : EmployerLocation.ToString();
+            string jobTypeTernary = string.IsNullOrEmpty(JobType.ToString()) ? "Data not available" : JobType.ToString();
+            string coreCompetencyTernary = string.IsNullOrEmpty(JobCoreCompetency.ToString()) ? "Data not available" : JobCoreCompetency.ToString();
             
             string nl = Environment.NewLine;
             
             return 
             nl +
-            "ID: " + idString + nl +
-            "Name: " + nameString + nl +
-            "Employer: " + employerString + nl +
-            "Location: " + locationString + nl +
-            "Position Type: " + jobTypeString + nl +
-            "Core Competency: " + coreCompetencyString +
+            "ID: " + idTernary + nl +
+            "Name: " + nameTernary + nl +
+            "Employer: " + employerTernary + nl +
+            "Location: " + locationTernary + nl +
+            "Position Type: " + jobTypeTernary + nl +
+            "Core Competency: " + coreCompetencyTernary +
             nl;
 
             
