@@ -1,4 +1,7 @@
 ﻿
+using System.Runtime.CompilerServices;
+using System.Xml;
+
 namespace TechJobs.Tests
 {
 	[TestClass]
@@ -12,7 +15,7 @@ namespace TechJobs.Tests
         Job job2 = new Job();
         Job job3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         Job job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        
+        Job job5 = new Job("", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
         [TestMethod]
         public void TestSettingJobId()
@@ -35,6 +38,43 @@ namespace TechJobs.Tests
         {
             Assert.IsFalse(job3.Equals(job4));
         }
+
+        [TestMethod]
+        public void TestToStringStartsAndEndsWithNewLine()
+        {
+            Assert.IsTrue(job3.ToString().StartsWith(Environment.NewLine));
+            Assert.IsTrue(job3.ToString().EndsWith(Environment.NewLine));
+        }
+
+        [TestMethod]
+        public void TestToStringContainsCorrectLabelsAndData()
+        {
+            Assert.AreEqual(Environment.NewLine +
+            "ID: " + "3" +
+            "Name: " + "Product tester" +
+            "Employer: " + "ACME" +
+            "Location: " + "Desert" +
+            "Position Type: " + "Quality control" + 
+            "Core Competency: " + "Persistence" +
+            Environment.NewLine, job3.ToString());
+        }
+
+        [TestMethod]
+        public void TestToStringHandlesEmptyField()
+        {
+            string nl = Environment.NewLine;
+            Assert.AreEqual(
+            nl +
+            "ID: " + "5" + nl +
+            "Name: " + "Data not available" + nl +
+            "Employer: " + "ACME" + nl +
+            "Location: " + "Desert" + nl +
+            "Position Type: " + "Quality control" + nl +
+            "Core Competency: " + "Persistence" +
+            nl, job5.ToString());
+        }
+
+        
     }
 }
 
