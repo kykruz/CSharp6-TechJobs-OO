@@ -49,14 +49,16 @@ namespace TechJobs.Tests
         [TestMethod]
         public void TestToStringContainsCorrectLabelsAndData()
         {
-            Assert.AreEqual(Environment.NewLine +
-            "ID: " + "3" +
-            "Name: " + "Product tester" +
-            "Employer: " + "ACME" +
-            "Location: " + "Desert" +
-            "Position Type: " + "Quality control" + 
+            string nl = Environment.NewLine;
+            Assert.AreEqual(
+            nl +
+            "ID: " + "18" + nl +
+            "Name: " + "Product tester" + nl +
+            "Employer: " + "ACME" + nl +
+            "Location: " + "Desert" + nl +
+            "Position Type: " + "Quality control" + nl +
             "Core Competency: " + "Persistence" +
-            Environment.NewLine, job3.ToString());
+            nl, job3.ToString());
         }
 
         [TestMethod]
@@ -65,7 +67,7 @@ namespace TechJobs.Tests
             string nl = Environment.NewLine;
             Assert.AreEqual(
             nl +
-            "ID: " + "5" + nl +
+            "ID: " + "25" + nl +
             "Name: " + "Data not available" + nl +
             "Employer: " + "ACME" + nl +
             "Location: " + "Desert" + nl +
